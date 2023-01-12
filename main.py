@@ -3,6 +3,7 @@ from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name, char_class):
+    """Функция генерирует количество очков атаки."""
     if char_class == 'warrior':
         return (f'{char_name} нанёс урон противнику равный '
                 f'{5 + randint(3, 5)}')
@@ -15,6 +16,7 @@ def attack(char_name, char_class):
 
 
 def defence(char_name, char_class):
+    """Функция генерирует количество очков защиты."""
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
     if char_class == 'mage':
@@ -24,6 +26,7 @@ def defence(char_name, char_class):
 
 
 def special(char_name, char_class):
+    """Функция возвращает сообщение о применении специального умения."""
     if char_class == 'warrior':
         return (f'{char_name}'
                 f' применил специальное умение «Выносливость {80 + 25}»')
@@ -34,6 +37,7 @@ def special(char_name, char_class):
 
 
 def start_training(char_name, char_class):
+    """Функция запускает цикл тренировки навыков персонажа."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -59,6 +63,7 @@ def start_training(char_name, char_class):
 
 
 def choice_char_class():
+    """Функция позволяет игроку выбрать тип игрового персонажа."""
     approve_choice = None
     char_class = None
     while approve_choice != 'y':
@@ -91,4 +96,3 @@ if __name__ == '__main__':
     print('Воитель, Маг, Лекарь')
     char_class: str = choice_char_class()
     print(start_training(char_name, char_class)) 
-    
